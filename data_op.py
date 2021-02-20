@@ -12,18 +12,19 @@ def train_valid_test_split(x_data, y_data, validation_size=0.1, test_size=0.1, s
     return x_train, x_valid, x_test, y_train, y_valid, y_test
 
 if __name__ == '__main__':
-    path = "model_data/imo"
+    path = "model_data/imo_all_text_day_218_60_v2"
     #pd_all = pd.read_csv(os.path.join(path, "imo_dis_test.csv"))
-    pd_all = pd.read_excel(os.path.join(path, 'imo_dis_2-7day90.xlsx'))
-    print(pd_all)
+    pd_all = pd.read_excel(os.path.join(path, 'imo_v2.xlsx'))
     pd_all = shuffle(pd_all)
     x_data, y_data = pd_all.review, pd_all.label
+    #x_data, y_data = pd_all.review.replace(r'\n\t\r', '', regex=True), pd_all.label
 
 
     x_train, x_valid, x_test, y_train, y_valid, y_test = train_valid_test_split(x_data, y_data, 0.1, 0.1)
 
     train = pd.DataFrame({'label':y_train, 'x_train': x_train})
     train.to_csv(os.path.join(path, "train.csv"), index=False, sep='\t')
+    #train.to_csv(os.path.join(path, "train.csv"), header=False, index=False, sep='\t')
     valid = pd.DataFrame({'label':y_valid, 'x_valid': x_valid})
     valid.to_csv(os.path.join(path, "dev.csv"), index=False, sep='\t')
     test = pd.DataFrame({'label':y_test, 'x_test': x_test})

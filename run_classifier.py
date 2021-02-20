@@ -242,6 +242,7 @@ class WeiboProcessor(DataProcessor):
     return examples
 
 
+
 class ImoDisProcessor(DataProcessor):
   """Processor for the ImoDis data set ."""
 
@@ -262,7 +263,7 @@ class ImoDisProcessor(DataProcessor):
 
   def get_labels(self):
     """See base class."""
-    return ["1", "3", "4", "5", "6", "7", "8", "9", "10"]
+    return ["1"]
 
   def _create_examples(self, lines, set_type):
     """Creates examples for the training and dev sets."""
@@ -276,7 +277,6 @@ class ImoDisProcessor(DataProcessor):
       examples.append(
           InputExample(guid=guid, text_a=text_a, text_b=None, label=label))
     return examples
-
 
 
 # 增加数据处理类, 可放置在class ColaProcessor(DataProcessor)类后面。

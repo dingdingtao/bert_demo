@@ -72,7 +72,7 @@ test_results.tsv 使用预测后生成的预测结果
 
 python C:/Users/Administrator/Documents/Python/bert/run_classifier.py --task_name=weibo --do_train=True --do_eval=True --data_dir=C:\Users\Administrator\Documents\Python\bert\model_data\hello_game_square --vocab_file=C:\Users\Administrator\Documents\Python\bert\bert_model\chinese_L-12_H-768_A-12\vocab.txt --bert_config_file=C:/Users/Administrator/Documents/Python/bert/bert_model/chinese_L-12_H-768_A-12/bert_config.json --init_checkpoint=C:/Users/Administrator/Documents/Python/bert/bert_model/chinese_L-12_H-768_A-12/bert_model.ckpt --train_batch_size=32 --learning_rate=5e-5 --num_train_epochs=2.0 --max_seq_length=128 --output_dir=C:\Users\Administrator\Documents\Python\bert\model_data\hello_game_square
 
-python C:/Users/Administrator/Documents/Python/bert/run_classifier.py --task_name=imodis --do_train=True --do_eval=True --data_dir=C:\Users\Administrator\Documents\Python\bert\model_data\imo --vocab_file=C:\Users\Administrator\Documents\Python\bert\bert_model\multi_cased_L-12_H-768_A-12\vocab.txt --bert_config_file=C:\Users\Administrator\Documents\Python\bert\bert_model\multi_cased_L-12_H-768_A-12\bert_config.json --init_checkpoint=C:\Users\Administrator\Documents\Python\bert\bert_model\multi_cased_L-12_H-768_A-12\bert_model.ckpt --train_batch_size=32 --learning_rate=5e-5 --num_train_epochs=2.0 --max_seq_length=128 --output_dir=C:\Users\Administrator\Documents\Python\bert\model_data\imo
+python C:\Users\Administrator\Documents\Python\bert_demo\run_classifier.py --task_name=imodis --do_train=True --do_eval=True --data_dir=C:\Users\Administrator\Documents\Python\bert_demo\model_data\imo_all_text_day_218_60_v2 --vocab_file=C:\Users\Administrator\Documents\Python\bert\bert_model\multi_cased_L-12_H-768_A-12\vocab.txt --bert_config_file=C:\Users\Administrator\Documents\Python\bert\bert_model\multi_cased_L-12_H-768_A-12\bert_config.json --init_checkpoint=C:\Users\Administrator\Documents\Python\bert\bert_model\multi_cased_L-12_H-768_A-12\bert_model.ckpt --train_batch_size=32 --learning_rate=5e-5 --num_train_epochs=2.0 --max_seq_length=128 --output_dir=C:\Users\Administrator\Documents\Python\bert_demo\model_data\imo_all_text_day_218_60_v2
 
 python C:/Users/Administrator/Documents/Python/bert/run_classifier.py 
     --task_name=weibo 
@@ -87,7 +87,7 @@ python C:/Users/Administrator/Documents/Python/bert/run_classifier.py
     --num_train_epochs=2.0 
     --max_seq_length=128 
     --output_dir=C:/Users/Administrator/Documents/Python/bert/data/weibo_data 
-python3 /home/zhousanfu/bert/run_classifier.py --task_name=weibo --do_train=True --do_eval=True --data_dir=/home/zhousanfu/bert/model_data/ --vocab_file=/home/zhousanfu/bert/chinese_L-12_H-768_A-12/vocab.txt --bert_config_file=/home/zhousanfu/bert/chinese_L-12_H-768_A-12/bert_config.json --init_checkpoint=/home/zhousanfu/bert/chinese_L-12_H-768_A-12/bert_model.ckpt --train_batch_size=32 --learning_rate=5e-5 --num_train_epochs=3.0 --max_seq_length=128 --output_dir=/home/zhousanfu/bert/model_data/hello_game_square
+python3 /home/zhousanfu/bert_demo/run_classifier.py --task_name=imodis --do_train=True --do_lower_case=False --do_eval=True --data_dir=C:\Users\Administrator\Documents\Python\bert_demo\model_data\imo_all_text_day_218_60_v2 --vocab_file=/home/zhousanfu/bert_demo/bert_model/multi_cased_L-12_H-768_A-12/vocab.txt --bert_config_file=/home/zhousanfu/bert_demo/bert_model/multi_cased_L-12_H-768_A-12/bert_config.json --init_checkpoint=/home/zhousanfu/bert_demo/bert_model/multi_cased_L-12_H-768_A-12/bert_model.ckpt --train_batch_size=32 --learning_rate=5e-5 --num_train_epochs=3.0 --max_seq_length=128 --output_dir=/home/zhousanfu/bert_demo/model_data/imo_all_text_day_218_60_v2
 
 ## 3.6训练：
 export BERT_BASE_DIR=./chinese_L-12_H-768_A-12#这里是存放中文模型的路径
@@ -102,7 +102,7 @@ python3 run_classifier.py \
 --vocab_file=$BERT_BASE_DIR/vocab.txt \
 --bert_config_file=$BERT_BASE_DIR/bert_config.json \
 --init_checkpoint=$BERT_BASE_DIR/bert_model.ckpt \
---max_seq_length=512 \#最大文本程度，最大512
+--max_seq_length=512 \最大文本程度，最大512
 --train_batch_size=4 \
 --learning_rate=2e-5 \
 --num_train_epochs=15 \
